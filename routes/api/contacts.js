@@ -18,6 +18,6 @@ router.delete('/:contactId', isValidId, ctrl.deleteById);
 
 router.put('/:contactId', isValidId, validates.validateBody(schemas.addSchema), ctrl.updateById);
 
-router.patch('/:contactId/favorite', isValidId, validates.validateFavorite(schemas.updateFavoriteSchema), ctrl.updateFavorite)
+router.patch('/:contactId/favorite', isValidId, validates.validateFavorite(schemas.updateFavoriteSchema), ctrl.updateStatusContact)
 
 module.exports = router;
