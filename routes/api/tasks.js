@@ -1,12 +1,14 @@
 const express = require('express');
-
-const ctrl = require('../../controllers');
+const { projectAuth } = require("../../middlewares");
+const { ctrlTasks } = require('../../controllers');
 
 const router = express.Router();
  
-router.get('/', ctrl.getAll);
+router.get('/', projectAuth, ctrlTasks.getAllTasks);
 
-router.post('/', ctrl.addTask);
+router.post('/', projectAuth, ctrlTasks.addTask);
+
+router.post('/:id', projectAuth, ctrlTasks.deleteTaskById)
 
 
 module.exports = router;
