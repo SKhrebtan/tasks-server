@@ -1,11 +1,11 @@
-const { Contact } = require("../../models/contact");
+const { Task } = require("../../models/tasks");
 const { ctrlWrapper } = require("../../helpers");
 
 const add = async (req, res) => {
-    const result = await Contact.create(req.body);
+    const result = await Task.create(req.body);
     res.status(201).json(result);
 }
 
 module.exports = {
-    add: ctrlWrapper(add)
+    addTask: ctrlWrapper(add)
 }

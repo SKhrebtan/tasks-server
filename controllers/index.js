@@ -1,5 +1,5 @@
-const ctrlContacts = require("./contacts");
+const ctrlTasks = require("./tasks");
 
 module.exports = {
-    ...ctrlContacts,
+    ...ctrlTasks,
 }
